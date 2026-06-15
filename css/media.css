@@ -1,0 +1,129 @@
+/* sm */
+@media screen and (min-width : 640px) {
+
+    /*! S T A R T H E A D E R   */
+    .dashboard__header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header-top__status-indicator{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-middle__meta__info p{
+        display: block;
+    }
+    
+    .header-bottom{
+        display: none;
+    }
+    
+    /*! E N D H E A D E R   */
+}
+
+@media screen and (min-width : 768px) {
+    .dashboard{
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas:
+        "sidebar sidebar header   header   header   header   header   header   header   header   header   header"
+        "sidebar sidebar stats    stats    stats    stats    stats    stats    stats    stats    stats    stats"
+        "sidebar sidebar dcontent dcontent dcontent dcontent dcontent dcontent dcontent dcontent dcontent dcontent";
+    }
+
+    /*! S T A R T S I D E B A R  */
+    .dashboard__sidebar{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        padding: 24px;
+        border-left: 1px solid #e5e7eb;
+        scrollbar-width: thin;
+        scrollbar-color: #9ca3af4d transparent;
+        overflow-y: auto;
+    }
+
+    /*! E N D     S I D E B A R */
+    /*! S T A R T H E A D E R   */
+    .header-middle__meta__info span{
+        display: block;
+    }
+    /*! E N D H E A D E R   */
+
+    /*! S T A R T S T A T S  */
+    .dashboard__stats{
+        grid-template-columns: repeat(3 , minmax(0,1fr));
+    }
+    /*! E N D S T A T S  */
+
+    /*! S T A R T D A S H B O A R D C O N T E N T  */
+    .dashboard__content__activities{
+        grid-area: activities;
+    }
+    .dashboard__content__transactions{
+        grid-area: transactions;
+    }
+
+    .dashboard__content__bills{
+        grid-area: bills;
+    }
+    .dashboard__content__budget{
+        grid-area: budget;
+    }
+    .dashboard__content__chart{
+        grid-area: chart;
+    }
+    .dashboard__content__summary{
+        grid-area: summary;
+    }
+    .dashboard__content__payment-methods{
+        grid-area: payment;
+    }
+    .dashboard__content{
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-areas: 
+        "activities activities activities activities activities chart chart chart chart chart"
+        "transactions transactions transactions transactions transactions transactions transactions transactions transactions transactions"
+        "bills bills bills bills bills summary summary summary summary summary"
+        "budget budget budget budget budget payment payment payment payment payment"
+        ;
+    }
+    /*! E N D D A S H B O A R D C O N T E N T  */
+
+    
+}
+
+@media screen and (min-width : 1280px) {
+    .dashboard__content{
+        /* grid-template-columns: repeat(3 ,minmax(0,1fr)); */
+        grid-template-areas: 
+        "activities activities   activities transactions transactions transactions transactions transactions transactions transactions"
+        "bills      bills                  bills transactions transactions transactions transactions transactions transactions transactions"
+        "budget     budget     budget     budget     chart        chart        chart     payment payment payment"
+        "budget     budget     budget     budget     summary      summary      summary   payment payment payment"
+        ;
+    }
+
+    .sidebar__header__info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar__main-content > ul > li span p{
+        display: block;
+        margin-block: 0;
+    }
+    .sidebar__quick-procedures .actions button p{
+        display: block;
+        color: #374151;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s;
+    }
+
+    
+
+    
+}
